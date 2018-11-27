@@ -17,7 +17,6 @@
 #import "PieChartData.h"
 #import "AnnulusChart.h"
 #import "AreaChart.h"
-#import "TestChart.h"
 
 @interface ShowViewController ()
 
@@ -30,8 +29,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     switch (self.showStyle) {
         case ShowCoordinateSystem:{
-            [self test];
-//            [self testCoordinateSystem];
+            [self testCoordinateSystem];
         }
             break;
         case ShowLineChart:{
@@ -58,35 +56,6 @@
         default:
             break;
     }
-}
-
-- (void)test {
-    TestChart *test = [[TestChart alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width , self.view.bounds.size.width)];
-    NSMutableArray *TitleX = [[NSMutableArray alloc] init];
-    
-    [TitleX addObject:@"11/26"];
-    [TitleX addObject:@"12/3"];
-    [TitleX addObject:@"12/10"];
-    [TitleX addObject:@"12/17"];
-    [TitleX addObject:@"12/24"];
-    [TitleX addObject:@"12/31"];
-    [TitleX addObject:@"1/7"];
-    [TitleX addObject:@"1/14"];
-    test.longitudeTitles = TitleX;
-    
-    NSMutableArray *TitleY = [[NSMutableArray alloc] init];
-    
-    [TitleY addObject:@"0"];
-    [TitleY addObject:@"1000"];
-    [TitleY addObject:@"2000"];
-    [TitleY addObject:@"3000"];
-    [TitleY addObject:@"4000"];
-    
-    test.latitudeTitles = TitleY;
-    
-    test.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:test];
-    self.view.backgroundColor = [UIColor cyanColor];
 }
 
 // 区域填充
